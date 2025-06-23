@@ -18,8 +18,6 @@ Mi proyecto se enfocará en estudiar al tiburón ballena a partir de secuencias 
 
 ## Q4. Sube una foto que represente tu organismo o grupo de organismo
 
-![Tiburón ballena](./tiburon_ballena.jpg)
-
-(Fuente: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Rhincodon_typus_Georgia_Aquarium.jpg))
+![Tiburón ballena](https://upload.wikimedia.org/wikipedia/commons/f/f6/Similan_Dive_Center_-_great_whale_shark.jpg)
 
 
