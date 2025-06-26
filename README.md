@@ -1,23 +1,29 @@
-# Proyecto Final - Ideas.Proyecto.Github
+# Proyecto Final: Diversidad genética del Tiburón Ballena (*Rhincodon typus*)
 
-## Q1. ¿En qué organismo o grupo de organismos vas a trabajar?
+## Autores
+- Freddy Omar Guaña Collaguazo 
+- Contacto: [foguana@puce.edu.ec](mailto:foguana@puce.edu.ec)
 
-Voy a trabajar con el tiburón ballena (Rhincodon typus), el pez más grande del mundo, perteneciente al grupo de los elasmobranquios.
+## Propósito del programa
+Este proyecto tiene como objetivo analizar la diversidad genética del tiburón ballena (*Rhincodon typus*), el pez más grande del mundo, mediante el uso de secuencias de ADN disponibles en bases de datos públicas. Se realizarán alineamientos múltiples y filogenias para estudiar posibles diferencias entre poblaciones de distintas regiones del mundo.
 
-## Q2. Brevemente describe qué piensas hacer en tu proyecto
+El proyecto busca aportar evidencia sobre la estructura genética poblacional de esta especie, clave para su conservación (Colman et al., 2022). La especie se encuentra actualmente en estado vulnerable según la IUCN.
 
-Mi proyecto se enfocará en estudiar al tiburón ballena a partir de secuencias de ADN obtenidas de bases de datos públicas NCBI. Planeo alinear las secuencias, construir árboles filogenéticos.
+![Tiburón ballena](https://static.nationalgeographic.es/files/styles/image_3200/public/whale-shark-swarm-01.webp?w=1450&h=963&q=100)
 
-## Q3. ¿Qué programas voy a usar en mi proyecto?
+## Requisitos para ejecutar el programa
+Para reproducir el análisis, se requiere tener instalados los siguientes programas:
 
-- **MUSCLE** para el alineamiento de secuencias.
-- **IQ-TREE** para la inferencia filogenética.
-- **FigTree** para visualizar los árboles.
-- **Atom** para revisar y editar los alineamientos.
-- **GitHub** para versionar y publicar el trabajo.
+- [MUSCLE](https://www.drive5.com/muscle/) (alineamiento de secuencias)
+- [IQ-TREE](http://www.iqtree.org/) (inferencia filogenética)
+- [AliView](https://ormbunkar.se/aliview/) (visualización de alineamientos)
+- [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) (visualización de árboles)
+- Git y GitHub para control de versiones
 
-## Q4. Sube una foto que represente tu organismo o grupo de organismo
+> **Nota:** Se recomienda usar un sistema basado en Unix (Linux o WSL en Windows).
 
-![Tiburón ballena](https://upload.wikimedia.org/wikipedia/commons/f/f6/Similan_Dive_Center_-_great_whale_shark.jpg)
+## Cómo usar el programa
+
+1.
 
 
