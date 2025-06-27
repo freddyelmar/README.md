@@ -1,86 +1,43 @@
 #!/bin/bash
-# 🔬 Análisis filogenético de genes del tiburón ballena (Rhincodon typus)
-# 🛠️ Incluye instalación de herramientas, alineamiento con MUSCLE, filogenia con IQ-TREE y visualización en FigTree
+# Análisis filogenético del tiburón ballena (Rhincodon typus)
+# Descarga del gen cytb, alineamiento con MUSCLE e inferencia filogenética con IQ-TREE
 
-# ======================
-# 📦 INSTALACIÓN DE HERRAMIENTAS
-# ======================
+# Cargar herramientas (en servidores con módulos)
+module load muscle
+module load iqtree
+module load datasets
 
-# Instalar NCBI Datasets y Dataformat (si no lo tienes)
-python3 -m pip install --upgrade pip
-python3 -m pip install ncbi-datasets-pylib
+# Crear carpetas necesarias
+mkdir -p genes_zip && echo "Carpeta 'genes_zip' creada o ya existente"
+mkdir -p genes && echo "Carpeta 'genes' creada o ya existente"
+mkdir -p aligned && echo "Carpeta 'aligned' creada o ya existente"
+mkdir -p trees && echo "Carpeta 'trees' creada o ya existente"
 
-# Instalar Entrez Direct
-cd ~
-git clone https://github.com/ncbi/edirect.git
-cd edirect
-sh install-edirect.sh
-export PATH=$PATH:$HOME/edirect
+# Descargar el gen cytb para Rhincodon typus
+./datasets download gene symbol cytb --taxon "Rhincodon typus" --filename genes_zip/cytb_Rhincodon.zip
 
-# Descargar MUSCLE
-mkdir -p ~/PROGRAMS
-cd ~/PROGRAMS
-wget https://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64
-chmod +x muscle3.8.31_i86linux64
-
-# Instalar IQ-TREE (en caso de que no esté)
-sudo apt install iqtree
-
-# Instalar FigTree (descargar JAR manualmente)
-# https://github.com/rambaut/figtree/releases
-# Luego ábrelo con:
-# java -jar Figtree_v*.jar
-
-# ======================
-# 🧬 DESCARGA Y PREPARACIÓN DE GENES
-# ======================
-
-# Crear carpetas de trabajo
-mkdir -p genes_zip genes aligned trees
-
-# Obtener todos los genes disponibles para Rhincodon typus
-./datasets summary gene taxon "Rhincodon typus" --as-json-lines \
-  | ./dataformat tsv gene --fields tax-name,gene-id,symbol \
-  > genes_Rhincodon.tsv
-
-# Filtrar el gen cytb como ejemplo
-grep -i cytb genes_Rhincodon.tsv > genes/cytb_Rhincodon.tsv
-
-# Descargar el gen cytb si está disponible
-./datasets download gene symbol cytb --taxon "Rhincodon typus" --filename cytb_Rhincodon.zip
-
-# Extraer archivo .fna (ajustar si cambia)
-unzip cytb_Rhincodon.zip
+# Extraer archivo .fna y moverlo a carpeta genes
+unzip genes_zip/cytb_Rhincodon.zip
 mv ncbi_dataset/data/*/rna.fna genes/gen1.fna
+echo "Archivo gen1.fna guardado en carpeta 'genes'"
 
-# ======================
-# 🧬 ALINEAMIENTO CON MUSCLE
-# ======================
+# Alineamiento con MUSCLE
+muscle -in genes/gen1.fna -out aligned/gen1_aligned.fasta
+echo "Alineamiento guardado en 'aligned/gen1_aligned.fasta'"
 
-cd genes
-cp ~/PROGRAMS/muscle3.8.31_i86linux64 ./
-
-# Alinear con MUSCLE
-for gene in *.fna; do
-  ./muscle3.8.31_i86linux64 -in "$gene" -out "../aligned/muscle_${gene%.fna}.fasta" -maxiters 1 -diags
-done
-cd ..
-
-# ======================
-# 🌳 FILOGENIA CON IQ-TREE
-# ======================
-
+# Inferencia filogenética con IQ-TREE
 cd aligned
-for aln in muscle_*.fasta; do
-  iqtree2 -s "$aln"
-done
+iqtree2 -s gen1_aligned.fasta
 cd ..
+echo "Árbol generado en 'aligned/gen1_aligned.fasta.treefile'"
 
-# ======================
-# 👁️ VISUALIZACIÓN EN FIGTREE
-# ======================
+# Abrir archivos generados con Atom (opcional)
+echo "Puedes abrir los archivos con Atom:"
+echo "atom aligned/gen1_aligned.fasta"
+echo "atom aligned/gen1_aligned.fasta.treefile"
 
-echo "✅ Abre los archivos .treefile generados con IQ-TREE en FigTree:"
-echo "→ Ejemplo: aligned/muscle_gen1.fasta.treefile"
-echo "Para abrir: java -jar Figtree_v*.jar"
+# Final
+echo "Análisis completo. Visualiza el árbol con FigTree o edítalo con Atom."
+
+
 

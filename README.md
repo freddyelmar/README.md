@@ -1,7 +1,7 @@
 # Proyecto Final: Diversidad genética del Tiburón Ballena (*Rhincodon typus*)
 
 ## Autores
-- Freddy Omar Guaña Collaguazo 
+- Freddy Omar Guaña Collaguazo  
 - Contacto: [foguana@puce.edu.ec](mailto:foguana@puce.edu.ec)
 
 ## Propósito del programa
@@ -12,18 +12,28 @@ El proyecto busca aportar evidencia sobre la estructura genética poblacional de
 ![Tiburón ballena](https://static.nationalgeographic.es/files/styles/image_3200/public/whale-shark-swarm-01.webp?w=1450&h=963&q=100)
 
 ## Requisitos para ejecutar el programa
-Para reproducir el análisis, se requiere tener instalados los siguientes programas:
 
-- [MUSCLE](https://www.drive5.com/muscle/) (alineamiento de secuencias)
-- [IQ-TREE](http://www.iqtree.org/) (inferencia filogenética)
-- [AliView](https://ormbunkar.se/aliview/) (visualización de alineamientos)
-- [FigTree](http://tree.bio.ed.ac.uk/software/figtree/) (visualización de árboles)
+- [MUSCLE](https://www.drive5.com/muscle/downloads.htm) (alineamiento de secuencias)
+- [IQ-TREE](https://github.com/iqtree/iqtree2/releases) (inferencia filogenética)
+- [FigTree](https://github.com/rambaut/figtree/releases) (visualización de árboles)
+- [Atom](https://atom.io/) (edición de archivos `.fasta` y `.tree`)
+- [NCBI Datasets CLI](https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/) y Entrez Direct (`edirect`) para descarga de datos
 - Git y GitHub para control de versiones
 
-> **Nota:** Se recomienda usar un sistema basado en Unix (Linux o WSL en Windows).
+> Se recomienda usar un entorno compatible con línea de comandos como Git Bash (Windows) o terminal de Linux.
 
 ## Cómo usar el programa
 
-1.
+1. Asegúrate de tener en la misma carpeta los ejecutables: `datasets`, `dataformat`, `muscle`, `iqtree2`.
+2. Ejecuta el script:
+
+```bash
+bash FilogeniaTiburon.sh
+
+
+
+
+
+
 
 
