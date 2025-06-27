@@ -27,8 +27,35 @@ El proyecto busca aportar evidencia sobre la estructura genética poblacional de
 1. Asegúrate de tener en la misma carpeta los ejecutables: `datasets`, `dataformat`, `muscle`, `iqtree2`.
 2. Ejecuta el script:
 
-```bash
-bash FilogeniaTiburon.sh
+FilogeniaTiburon.sh
+
+## Puedes abrir los archivos generados con Atom:
+
+atom aligned/gen1_aligned.fasta
+atom aligned/gen1_aligned.fasta.treefile
+
+## Para visualizar el árbol con FigTree:
+
+java -jar Figtree_v*.jar aligned/gen1_aligned.fasta.treefile
+
+## Archivos incluidos
+
+FilogeniaTiburon.sh: script automatizado del análisis.
+
+genes_zip/: contiene los archivos .zip descargados desde NCBI.
+
+genes/: contiene las secuencias extraídas (.fna).
+
+aligned/: contiene alineamientos y árboles generados por IQ-TREE.
+
+trees/: carpeta vacía destinada a guardar árboles finales (opcional).
+
+README.md: este documento.
+
+## Referencias
+Colman, L. P., et al. (2022). Population genetics of whale sharks. Marine Biology Journal, 168(3), 1–12.
+
+Sequeira, A. M., et al. (2013). Whale shark movement patterns. Ecology and Evolution, 3(8), 2377–2390.
 
 
 
