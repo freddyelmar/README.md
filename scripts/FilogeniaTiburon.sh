@@ -2,10 +2,10 @@
 # Análisis filogenético del tiburón ballena (Rhincodon typus)
 # Descarga del gen cytb, alineamiento con MUSCLE e inferencia filogenética con IQ-TREE
 
-# Cargar herramientas (en servidores con módulos)
-module load muscle
-module load iqtree
-module load datasets
+# Cargar módulos necesarios (versiones recomendadas)
+module load muscle/3.8.31
+module load iqtree/2.2.0
+module load datasets/15.0.0
 
 # Crear carpetas necesarias
 mkdir -p genes_zip && echo "Carpeta 'genes_zip' creada o ya existente"
@@ -29,15 +29,15 @@ echo "Alineamiento guardado en 'aligned/gen1_aligned.fasta'"
 cd aligned
 iqtree2 -s gen1_aligned.fasta
 cd ..
-echo "Árbol generado en 'aligned/gen1_aligned.fasta.treefile'"
 
-# Abrir archivos generados con Atom (opcional)
-echo "Puedes abrir los archivos con Atom:"
-echo "atom aligned/gen1_aligned.fasta"
-echo "atom aligned/gen1_aligned.fasta.treefile"
-
-# Final
-echo "Análisis completo. Visualiza el árbol con FigTree o edítalo con Atom."
+# Mensajes de finalización
+echo "Análisis filogenético completado."
+echo "Archivos generados:"
+echo "- Alineamiento: aligned/gen1_aligned.fasta"
+echo "- Árbol filogenético: aligned/gen1_aligned.fasta.treefile"
+echo "Puedes visualizar y editar los archivos con las siguientes aplicaciones:"
+echo "- Para visualizar el árbol filogenético: FigTree (https://github.com/rambaut/figtree)"
+echo "- Para editar archivos fasta o treefile: Editor de texto Atom (https://atom.io)"
 
 
 
