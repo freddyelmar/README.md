@@ -55,14 +55,22 @@ El proyecto busca aportar evidencia sobre la diversidad genética y la filogenia
 - scripts/: contiene el script que ejecuta el análisis  
 - README.md: este documento
 
+## Conclusiones
+
+El árbol filogenético obtenido a partir del gen mitocondrial *COX1* permitió observar las relaciones evolutivas entre peces amazónicos representativos (*Arapaima gigas*, *Pygocentrus nattereri*, *Potamotrygon motoro* y *Corydoras aeneus*), junto a un grupo externo (*Ambystoma mexicanum*), lo cual aporta una visión comparativa dentro del clado.
+
+Se evidenció que, a pesar de su importancia ecológica y cultural, muchas especies amazónicas aún carecen de evaluaciones actualizadas en bases globales como la Lista Roja de la IUCN. Por ejemplo, *Pygocentrus nattereri* no cuenta con un estado claro, y otras como *Arapaima gigas* presentan clasificación como “Datos insuficientes” en varias regiones (Castello et al., 2011; IUCN, 2023).
+
+Este proyecto busca incentivar el uso de herramientas bioinformáticas y la investigación genética para mejorar el conocimiento sobre peces amazónicos. Aportar datos de secuencias y relaciones filogenéticas puede fortalecer estrategias de conservación en uno de los ecosistemas más biodiversos y amenazados del planeta (Winemiller et al., 2016).
+
 ## Referencias
 
 - Santos, I. C., et al. (2020). Mitochondrial genome analysis reveals phylogenetic relationships among Neotropical freshwater fishes. *Molecular Phylogenetics and Evolution*, 148, 106819.  
 - Colman, L. P., et al. (2022). Population genetics of whale sharks. *Marine Biology Journal*, 168(3), 1–12.  
 - Sequeira, A. M., et al. (2013). Whale shark movement patterns. *Ecology and Evolution*, 3(8), 2377–2390.
-
-
-
+- IUCN (2023). *The IUCN Red List of Threatened Species*. Disponible en: https://www.iucnredlist.org
+- Castello, L., Viana, J. P., Watkins, G., Pinedo-Vasquez, M., & Luzadis, V. A. (2011). Sustainable management of arapaima (*Arapaima gigas*) in the Amazon. *Journal of Applied Ichthyology*, 27(4), 14–21. https://doi.org/10.1111/j.1439-0426.2011.01754.x
+- Winemiller, K. O., McIntyre, P. B., Castello, L., et al. (2016). Balancing hydropower and biodiversity in the Amazon, Congo, and Mekong. *Science*, 351(6269), 128–129. https://doi.org/10.11/10.1126/science.aac7082
 
 
 
